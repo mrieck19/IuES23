@@ -352,37 +352,37 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0x48
+.debug_aranges  0x0000000000000000       0x50
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x48 build/default/production/main.o
+                0x0000000000000000       0x50 build/default/production/main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0x927
+.debug_info     0x0000000000000000      0x95c
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x5f4 /Applications/microchip/mplabx/v6.05/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_info    0x00000000000005f4      0x333 build/default/production/main.o
+ .debug_info    0x00000000000005f4      0x368 build/default/production/main.o
 
-.debug_abbrev   0x0000000000000000      0x624
+.debug_abbrev   0x0000000000000000      0x675
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x5a2 /Applications/microchip/mplabx/v6.05/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_abbrev  0x00000000000005a2       0x82 build/default/production/main.o
+ .debug_abbrev  0x00000000000005a2       0xd3 build/default/production/main.o
 
-.debug_line     0x0000000000000000      0x266
+.debug_line     0x0000000000000000      0x28f
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x137 /Applications/microchip/mplabx/v6.05/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_line    0x0000000000000137      0x12f build/default/production/main.o
+ .debug_line    0x0000000000000137      0x158 build/default/production/main.o
 
-.debug_frame    0x0000000000000000       0x74
+.debug_frame    0x0000000000000000       0xd8
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x74 build/default/production/main.o
+ .debug_frame   0x0000000000000000       0xd8 build/default/production/main.o
 
-.debug_str      0x0000000000000000      0x208
+.debug_str      0x0000000000000000      0x214
  *(.debug_str)
  .debug_str     0x0000000000000000      0x208 /Applications/microchip/mplabx/v6.05/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_str     0x0000000000000208        0x0 build/default/production/main.o
+ .debug_str     0x0000000000000208        0xc build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -405,9 +405,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0x38
+.debug_ranges   0x0000000000000000       0x40
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x38 build/default/production/main.o
+ .debug_ranges  0x0000000000000000       0x40 build/default/production/main.o
 
 .debug_macro
  *(.debug_macro)
@@ -420,90 +420,95 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x40 /Applications/microchip/mplabx/v6.05/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
 
-.text.initializeTimer1
-                0x0000000000000080       0x1e
- .text.initializeTimer1
-                0x0000000000000080       0x1e build/default/production/main.o
-                0x0000000000000080                initializeTimer1
-
-.text.main      0x000000000000009e       0x18
- .text.main     0x000000000000009e       0x18 build/default/production/main.o
-                0x000000000000009e                main
-
-.text.exit      0x00000000000000b6       0x16
- .text.exit     0x00000000000000b6       0x16 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(exit.o)
-                0x00000000000000b6                exit
-
-.text.resetTimer1
-                0x00000000000000cc        0xc
- .text.resetTimer1
-                0x00000000000000cc        0xc build/default/production/main.o
-                0x00000000000000cc                resetTimer1
+.text.__vector_5
+                0x0000000000000080       0x4e
+ .text.__vector_5
+                0x0000000000000080       0x4e build/default/production/main.o
+                0x0000000000000080                __vector_5
 
 .text.__vector_13
-                0x00000000000000d8        0x6
+                0x00000000000000ce       0x22
  .text.__vector_13
-                0x00000000000000d8        0x6 build/default/production/main.o
-                0x00000000000000d8                __vector_13
+                0x00000000000000ce       0x22 build/default/production/main.o
+                0x00000000000000ce                __vector_13
 
 .text.initializeButton
-                0x00000000000000de        0x6
+                0x00000000000000f0       0x1c
  .text.initializeButton
-                0x00000000000000de        0x6 build/default/production/main.o
-                0x00000000000000de                initializeButton
+                0x00000000000000f0       0x1c build/default/production/main.o
+                0x00000000000000f0                initializeButton
 
-.text           0x00000000000000e4        0x4
- .text          0x00000000000000e4        0x4 /Applications/microchip/mplabx/v6.05/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
-                0x00000000000000e4                __vector_20
-                0x00000000000000e4                __vector_1
-                0x00000000000000e4                __vector_24
-                0x00000000000000e4                __vector_12
-                0x00000000000000e4                __bad_interrupt
-                0x00000000000000e4                __vector_6
-                0x00000000000000e4                __vector_3
-                0x00000000000000e4                __vector_23
-                0x00000000000000e4                __vector_25
-                0x00000000000000e4                __vector_11
-                0x00000000000000e4                __vector_17
-                0x00000000000000e4                __vector_19
-                0x00000000000000e4                __vector_7
-                0x00000000000000e4                __vector_5
-                0x00000000000000e4                __vector_4
-                0x00000000000000e4                __vector_9
-                0x00000000000000e4                __vector_2
-                0x00000000000000e4                __vector_21
-                0x00000000000000e4                __vector_15
-                0x00000000000000e4                __vector_8
-                0x00000000000000e4                __vector_14
-                0x00000000000000e4                __vector_10
-                0x00000000000000e4                __vector_16
-                0x00000000000000e4                __vector_18
-                0x00000000000000e4                __vector_22
+.text.initializeTimer1
+                0x000000000000010c       0x16
+ .text.initializeTimer1
+                0x000000000000010c       0x16 build/default/production/main.o
+                0x000000000000010c                initializeTimer1
+
+.text.exit      0x0000000000000122       0x16
+ .text.exit     0x0000000000000122       0x16 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(exit.o)
+                0x0000000000000122                exit
+
+.text.resetTimer1
+                0x0000000000000138       0x14
+ .text.resetTimer1
+                0x0000000000000138       0x14 build/default/production/main.o
+                0x0000000000000138                resetTimer1
+
+.text.main      0x000000000000014c        0xe
+ .text.main     0x000000000000014c        0xe build/default/production/main.o
+                0x000000000000014c                main
+
+.text           0x000000000000015a        0x4
+ .text          0x000000000000015a        0x4 /Applications/microchip/mplabx/v6.05/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x000000000000015a                __vector_20
+                0x000000000000015a                __vector_1
+                0x000000000000015a                __vector_24
+                0x000000000000015a                __vector_12
+                0x000000000000015a                __bad_interrupt
+                0x000000000000015a                __vector_6
+                0x000000000000015a                __vector_3
+                0x000000000000015a                __vector_23
+                0x000000000000015a                __vector_25
+                0x000000000000015a                __vector_11
+                0x000000000000015a                __vector_17
+                0x000000000000015a                __vector_19
+                0x000000000000015a                __vector_7
+                0x000000000000015a                __vector_4
+                0x000000000000015a                __vector_9
+                0x000000000000015a                __vector_2
+                0x000000000000015a                __vector_21
+                0x000000000000015a                __vector_15
+                0x000000000000015a                __vector_8
+                0x000000000000015a                __vector_14
+                0x000000000000015a                __vector_10
+                0x000000000000015a                __vector_16
+                0x000000000000015a                __vector_18
+                0x000000000000015a                __vector_22
 
 .text.initializeBuzzer
-                0x00000000000000e8        0x4
+                0x000000000000015e        0x4
  .text.initializeBuzzer
-                0x00000000000000e8        0x4 build/default/production/main.o
-                0x00000000000000e8                initializeBuzzer
+                0x000000000000015e        0x4 build/default/production/main.o
+                0x000000000000015e                initializeBuzzer
 
-.text._Exit     0x00000000000000ec        0x4
- .text._Exit    0x00000000000000ec        0x4 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(_Exit.o)
-                0x00000000000000ec                _Exit
+.text._Exit     0x0000000000000162        0x4
+ .text._Exit    0x0000000000000162        0x4 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(_Exit.o)
+                0x0000000000000162                _Exit
 
 .text.__dummy_fini
-                0x00000000000000f0        0x2
+                0x0000000000000166        0x2
  .text.__dummy_fini
-                0x00000000000000f0        0x2 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(exit.o)
-                0x00000000000000f0                _fini
+                0x0000000000000166        0x2 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(exit.o)
+                0x0000000000000166                _fini
 
 .text.__dummy_funcs_on_exit
-                0x00000000000000f2        0x2
+                0x0000000000000168        0x2
  .text.__dummy_funcs_on_exit
-                0x00000000000000f2        0x2 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(exit.o)
-                0x00000000000000f2                __funcs_on_exit
+                0x0000000000000168        0x2 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(exit.o)
+                0x0000000000000168                __funcs_on_exit
 
 .text.__dummy_simulator_exit
-                0x00000000000000f4        0x2
+                0x000000000000016a        0x2
  .text.__dummy_simulator_exit
-                0x00000000000000f4        0x2 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(exit.o)
-                0x00000000000000f4                __simulator_exit
+                0x000000000000016a        0x2 /Applications/microchip/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/libc.a(exit.o)
+                0x000000000000016a                __simulator_exit
