@@ -9,17 +9,13 @@
 #define BUTTON_PRESS (PIND & (1<<PIND1))
 #define ENABLE_BUZZER PORTC |= (1 << PC4)
 #define DISABLE_BUZZER PORTC &= ~(1 << PC4)
+#define RESET_TIMER1 TCNT1 = 49910
+#define RESET_TIMER1_PRESCALER TCCR1B |= (1 << CS12) | (1 << CS10)
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
 volatile uint8_t overflow_counter = 0;
-
-void resetTimer1() {
-    TCNT1 = 49910;  // Reset the Timer/Counter1
-
-    TCCR1B |= (1 << CS12) | (1 << CS10); // Reset prescaler to 1024
-}
 
 // Interrupt Service Routine for Timer/Counter1 Overflow
 ISR(TIMER1_OVF_vect) {
@@ -36,15 +32,20 @@ ISR(TIMER1_OVF_vect) {
         overflow_counter = 0;   // Reset overflow counter
     }
     
-    resetTimer1();
+    RESET_TIMER1; 
 }
 
 // Interrupt Service Routine for PCINT17 (PD1)
 ISR(PCINT2_vect) {
     // Check if the button on PD1 is pressed
     if (BUTTON_PRESS) {
+        
         ENABLE_BUZZER;          // Enable the Buzzer
-        resetTimer1();          // Reset the timer/counter1
+        
+        RESET_TIMER1;
+        
+        RESET_TIMER1_PRESCALER;
+        
     }
 }
 
@@ -62,7 +63,7 @@ void initializeBuzzer() {
 
 void initializeTimer1() {
     TIMSK1 |= (1 << TOIE1);     // Enable Timer/Counter1 Overflow Interrupt
-    TCNT1 = 49910;              // Set initial value of Timer1, creates interrupt every 1s
+    RESET_TIMER1;             // Set initial value of Timer1, creates interrupt every 1s
 
     sei(); // Enable global interrupts
 }
