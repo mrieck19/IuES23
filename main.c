@@ -15,6 +15,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
+#include "dht11.h"
+
 volatile uint8_t overflow_counter = 0;
 
 // Interrupt Service Routine for Timer/Counter1 Overflow
