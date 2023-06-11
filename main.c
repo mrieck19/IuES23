@@ -54,7 +54,7 @@ void initializeButton() {
     PORTD |= (1 << PD1);        // Enable pull-up resistor on PD1
     // Enable PCINT17 interrupt on Port D
     PCICR |= (1 << PCIE2);      // Enable Pin Change Interrupt of PCIE2 (PCINT23..16)
-    PCMSK2 |= (1 << PCINT17);   // Enable PCINT17 (PD1) Inerrupt in Mask Register
+    PCMSK2 |= (1 << PCINT17);   // Enable PCINT17 (PD1) Interrupt in Mask Register
 }
 
 void initializeBuzzer() {
