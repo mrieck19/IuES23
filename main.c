@@ -21,23 +21,42 @@
 #include "timer1.h"
 #include "buzzer1.h"
 #include "button.h"
+//#include "tft.h"
+#include "spi.h"
 
 volatile uint8_t overflow_counter = 0;
 
+
+    const char* myText = "Hello, World!";
+    U8 startX = 10;
+    U8 startY = 20;
+    U8 scale = 0.5;
+    U16 textColor = 0x0000;       // White color
+    U16 backgroundColor = 0xFFFF; // Black color
+    U8 displayOrientation = 1; 
+    
 int main() {
     
     // Initialize Functions
     initializeTimer1();
     initializeButton();
     initializeBuzzer();
-    sei();
     
+
+      
+    sei();
     
     while (1) {
 
     }
 }
+/*
+int initialiseDisplay() {
 
+    SPI_init();
+    TFT_init();
+}
+*/
 // Interrupt Service Routine for Timer/Counter1 Overflow
 ISR(TIMER1_OVF_vect) {
 
@@ -60,7 +79,7 @@ ISR(TIMER1_OVF_vect) {
 ISR(PCINT2_vect) {
     // Check if the button on PD1 is pressed
     if (BUTTON_PRESS){
-        
+        //void TFT_Print(char* myText,U8 startX,U8 startY,U8 scale,U16 textColor,U16 backgroundColor,U8 displayOrientation); 
         ENABLE_BUZZER;          // Enable the Buzzer
         
         RESET_TIMER1;
@@ -69,4 +88,6 @@ ISR(PCINT2_vect) {
         
     }
 }
+
+
 
