@@ -1,5 +1,5 @@
-build/default/production/button.o.d build/default/production/button.o: \
- button.c /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h \
+build/default/debug/button.o.d build/default/debug/button.o: button.c \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/sfr_defs.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/inttypes.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/features.h \

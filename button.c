@@ -5,12 +5,11 @@
  * Created on June 2, 2023, 2:32 PM
  */
 
-#define BUTTON_PRESS (PIND & (1<<PIND1))
-
 
 
 
 #include <avr/io.h>
+#include <avr/interrupt.h>
 
 void initializeButton() {
     DDRD &= ~(1 << PD1);        // Set PD1 as input pin (Button)

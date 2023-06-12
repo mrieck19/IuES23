@@ -8,10 +8,11 @@
 #ifndef BUZZER_H
 #define	BUZZER_H
 
-#define ENABLE_BUZZER 
-#define DISABLE_BUZZER
+#define ENABLE_BUZZER PORTC |= (1 << PC4)
+#define DISABLE_BUZZER PORTC &= ~(1 << PC4)
 
-void initializeBuzzer();
+
+extern void initializeBuzzer();
 
 #endif
 

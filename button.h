@@ -8,8 +8,8 @@
 #ifndef BUTTON_H
 #define	BUTTON_H
 
-#define BUTTON_PRESS
-void initializeButton();
+#define BUTTON_PRESS (PIND & (1<<PIND1))
+extern void initializeButton();
 
 
 #endif	/* BUTTON_H */

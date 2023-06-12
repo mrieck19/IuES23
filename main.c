@@ -6,8 +6,9 @@
  */
 
 #define F_CPU 16000000UL
+
+//#define BUTTON_PRESS (PIND & (1<<PIND1))
 /*
-#define BUTTON_PRESS (PIND & (1<<PIND1))
 #define ENABLE_BUZZER PORTC |= (1 << PC4)
 #define DISABLE_BUZZER PORTC &= ~(1 << PC4)
 #define RESET_TIMER1 TCNT1 = 49910
@@ -68,22 +69,4 @@ ISR(PCINT2_vect) {
         
     }
 }
-/*
-void initializeButton() {
-    DDRD &= ~(1 << PD1);        // Set PD1 as input pin (Button)
-    PORTD |= (1 << PD1);        // Enable pull-up resistor on PD1
-    // Enable PCINT17 interrupt on Port D
-    PCICR |= (1 << PCIE2);      // Enable Pin Change Interrupt of PCIE2 (PCINT23..16)
-    PCMSK2 |= (1 << PCINT17);   // Enable PCINT17 (PD1) Interrupt in Mask Register
-}
 
-void initializeBuzzer() {
-    DDRC |= (1 << PC4);         // Set Port C Pin 4 (PC4) as output (BUZZER)
-}
-
-void initializeTimer1() {
-    TIMSK1 |= (1 << TOIE1);     // Enable Timer/Counter1 Overflow Interrupt
-    RESET_TIMER1;             // Set initial value of Timer1, creates interrupt every 1s
-
-}
-*/

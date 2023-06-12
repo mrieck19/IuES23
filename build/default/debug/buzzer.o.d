@@ -1,5 +1,5 @@
-build/default/production/button.o.d build/default/production/button.o: \
- button.c /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h \
+build/default/debug/buzzer.o.d build/default/debug/buzzer.o: buzzer.c \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/sfr_defs.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/inttypes.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/features.h \
@@ -11,8 +11,7 @@ build/default/production/button.o.d build/default/production/button.o: \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/portpins.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/common.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/fuse.h \
- /Applications/microchip/xc8/v2.41/avr/avr/include/avr/lock.h \
- /Applications/microchip/xc8/v2.41/avr/avr/include/avr/interrupt.h
+ /Applications/microchip/xc8/v2.41/avr/avr/include/avr/lock.h
 
 /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h:
 
@@ -39,5 +38,3 @@ build/default/production/button.o.d build/default/production/button.o: \
 /Applications/microchip/xc8/v2.41/avr/avr/include/avr/fuse.h:
 
 /Applications/microchip/xc8/v2.41/avr/avr/include/avr/lock.h:
-
-/Applications/microchip/xc8/v2.41/avr/avr/include/avr/interrupt.h:

@@ -5,8 +5,6 @@
  * Created on June 2, 2023, 2:32 PM
  */
 
-#define ENABLE_BUZZER PORTC |= (1 << PC4)
-#define DISABLE_BUZZER PORTC &= ~(1 << PC4)
 
 
 #include <avr/io.h>

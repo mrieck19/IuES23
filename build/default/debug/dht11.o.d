@@ -1,5 +1,5 @@
-build/default/production/button.o.d build/default/production/button.o: \
- button.c /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h \
+build/default/debug/dht11.o.d build/default/debug/dht11.o: dht11.c \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/sfr_defs.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/inttypes.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/features.h \
@@ -12,7 +12,9 @@ build/default/production/button.o.d build/default/production/button.o: \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/common.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/fuse.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/lock.h \
- /Applications/microchip/xc8/v2.41/avr/avr/include/avr/interrupt.h
+ /Applications/microchip/xc8/v2.41/avr/avr/include/util/delay.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/util/delay_basic.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/math.h
 
 /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h:
 
@@ -40,4 +42,8 @@ build/default/production/button.o.d build/default/production/button.o: \
 
 /Applications/microchip/xc8/v2.41/avr/avr/include/avr/lock.h:
 
-/Applications/microchip/xc8/v2.41/avr/avr/include/avr/interrupt.h:
+/Applications/microchip/xc8/v2.41/avr/avr/include/util/delay.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/util/delay_basic.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/math.h:
