@@ -11,8 +11,14 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <string.h>
+
+#include "buzzer1.h"
+#include "timer1.h"
 
 volatile char receivedChar;
+volatile char command[12];
+volatile uint8_t commandIndex;
 
 void initializeUART() {
   // Set baud rate
@@ -44,9 +50,52 @@ void sendStringUART(const char* str) {
   }
 }
 
+void compareCommand() {
+    
+    if (strcmp((char*)command, "open window") == 0) {
+        ENABLE_BUZZER;                          // Enable the Buzzer
+        
+        RESET_TIMER1;
+        
+        RESET_TIMER1_PRESCALER;
+    }
+    
+    if (strcmp((char*)command, "close window") == 0) {
+        ENABLE_BUZZER;                          // Enable the Buzzer
+        
+        RESET_TIMER1;
+        
+        RESET_TIMER1_PRESCALER;
+    }
+}
+
 // UART receive complete interrupt service routine
 ISR(USART_RX_vect) {
   receivedChar = UDR0;
   
-  // Process received character here
+  // Start of command
+  if (receivedChar == '<'){
+      // Reset array
+      memset((char*)command, '\0', sizeof(command)); 
+      
+      // Reset index
+      commandIndex = 0;
+      
+      return;
+  }
+  
+  // End of command
+  if (receivedChar == '>'){
+      compareCommand();
+      commandIndex = 0;
+      return;
+  }
+  
+  // Our char buffer is only 12 bytes
+  if (commandIndex > 12) {
+      return;
+  }
+  
+  command[commandIndex] = receivedChar;
+  commandIndex++;
 }
