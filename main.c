@@ -16,6 +16,7 @@
 #include "button.h"
 //#include "tft.h"
 #include "spi.h"
+#include "uart.h"
 
 int main() {
     
@@ -23,6 +24,7 @@ int main() {
     initializeTimer1();
     initializeButton();
     initializeBuzzer();
+    initializeUART();
     
     sei();                                      // Enable Global Interrupts
     
@@ -68,6 +70,4 @@ ISR(PCINT0_vect) {
         RESET_TIMER1_PRESCALER;
     }
 }
-
-
 
