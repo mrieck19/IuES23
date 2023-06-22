@@ -11,7 +11,10 @@ build/default/production/tft.o.d build/default/production/tft.o: tft.c \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/portpins.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/common.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/fuse.h \
- /Applications/microchip/xc8/v2.41/avr/avr/include/avr/lock.h spi.h tft.h
+ /Applications/microchip/xc8/v2.41/avr/avr/include/avr/lock.h spi.h tft.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/util/delay.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/util/delay_basic.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/math.h
 
 /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h:
 
@@ -42,3 +45,9 @@ build/default/production/tft.o.d build/default/production/tft.o: tft.c \
 spi.h:
 
 tft.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/util/delay.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/util/delay_basic.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/math.h:

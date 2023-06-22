@@ -1,6 +1,13 @@
+#define F_CPU 16000000UL
+
 #include <avr/io.h>
 #include "spi.h"
 #include "tft.h"
+#include <util/delay.h>
+
+
+
+
 
 const U8 Font[] =
 {
@@ -108,28 +115,80 @@ const U8 Font[] =
    0x0C , 0x12 , 0x12 , 0x1C , 0x12 , 0x12 , 0x1C , 0x10,      //ß
    0x06 , 0x09 , 0x09 , 0x06 , 0x00 , 0x00 , 0x00 , 0x00	   //°  Anmerkung: selbst hinzugefügt!!	
 };
-//Funktion zum Senden eines Kommandos an das Display
-void SendCommandSeq(U16 * data, U16 count)	//const U16 * data: veränderbarer Pointer zu einem nicht veränderbaren String
-{
-  U16 i;
-	U8  sd;
 
-	for (i=0; i<count; ++i)
-	{
-		PORTD |= (1<<D_C);   		//Data/Command auf High => Kommando-Modus
-		sd = (data[i] >> 8) & 0xFF;     //MSB
-		SPISend8Bit(sd);
-		sd = data[i] & 0xFF;            //LSB
-		SPISend8Bit(sd);
-		PORTD &= ~(1<<D_C);		//Data/Command auf Low => Daten-Modus
-		
-	}
+
+void SPI_init(){
+    //Set CS,MOSI,SCK as Output;
+    SPI_DDR |= (1<<CS) | (1<<MOSI) | (1<<SCK);
+
+    //enable SPI, set as master and click to fosc/4:
+    SPCR = (1<<SPE) | (1<<MSTR);
 }
+
+
+
+
+//Funktion zum Senden eines Kommandos an das Display
+void SendCommandSeq(const uint16_t * data, uint16_t Anzahl){
+    uint16_t index;
+    uint8_t SendeByte;
+        for (index=0; index<Anzahl; index++){
+            PORTD |= (1<<D_C); //Kommando-Modus
+            SendeByte = (data[index] >> 8) & 0xFF; //High-Byte des Kommandos
+            SPISend8Bit(SendeByte);
+            SendeByte = data[index] & 0xFF; //Low-Byte des Kommandos
+            SPISend8Bit(SendeByte);
+            PORTD &= ~(1<<D_C); //Daten-Modus
+        }
+}
+
+void SPISend8Bit (uint8_t data){
+    
+    PORTB&= ~(1<<CS);//CS low
+    SPDR= data;//loaddataintoregister
+    while(!(SPSR& (1 << SPIF)));//wait for transmission complete
+    PORTB|= (1<<CS);//CS high
+}
+
+void Display_init(void) {
+    
+    DDRD |=(1<<D_C)|(1<<Reset);
+    
+    
+    const uint16_t InitData[] = {
+    //Initialisierungsdaten fuer 256 Farben Modus
+    0xFDFD, 0xFDFD,
+    0xEF00, 0xEE04, 0x1B04, 0xFEFE, 0xFEFE,
+    0xEF90, 0x4A04, 0x7F3F, 0xEE04, 0x4306,
+    0xEF90, 0x0983, 0x0800, 0x0BAF, 0x0A00,
+    0x0500, 0x0600, 0x0700, 0xEF00, 0xEE0C,
+    0xEF90, 0x0080, 0xEFB0, 0x4902, 0xEF00,
+    0x7F01, 0xE181, 0xE202, 0xE276, 0xE183,
+    0x8001, 0xEF90, 0x0000
+    };
+ 
+    _delay_ms(300);
+    PORTD&= ~(1<<Reset);//Beginn Hardware-Reset
+    _delay_ms(75);
+    PORTB|= (1<<CS);
+    _delay_ms(75);
+    PORTD|= (1<<D_C);
+    _delay_ms(75);
+    PORTD|= (1<<Reset);//Ende Hardware Reset
+    _delay_ms(75);
+    SendCommandSeq(&InitData[0], 2);
+    _delay_ms(75);
+    SendCommandSeq(&InitData[2], 10);
+    _delay_ms(75);
+    SendCommandSeq(&InitData[12], 23);
+};
+  
+   
   
 //Funktion zum Festlegen der Display-Orientierung und eines Ausgabefensters
 void TFT_Window(U8 x1, U8 y1, U8 x2, U8 y2, U8 TFT_Orientation) 
 { 
-	U16 data[] = 
+	U32 data[] = 
 	{ 
 		0xEF08,
 		0x1800,
@@ -173,7 +232,9 @@ void TFT_Window(U8 x1, U8 y1, U8 x2, U8 y2, U8 TFT_Orientation)
     }
 
 	SendCommandSeq(data, 6);
-} 
+}
+
+
 
 // Funktion zum Übertragen der Farbdaten an das Display
 void TFT_SPI_16BitPixelSend(U16 data)

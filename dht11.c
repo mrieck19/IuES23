@@ -3,6 +3,8 @@
  * Author: alex
  *
  * Created on 11. Juni 2023, 14:42
+ * 
+ * PIN Order ATMega: Yellow - Ground, Orange Stromversorgung, Rot Signal
  */
 
 #define DHT11_PIN PC0

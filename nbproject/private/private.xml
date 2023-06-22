@@ -3,15 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/main.c</file>
-            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/dht11.c</file>
+            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/tft.c</file>
             <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/timer1.c</file>
             <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/button.c</file>
-            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/dht11.h</file>
-            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/buzzer.c</file>
+            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/spi.h</file>
+            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/uart.c</file>
+            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/tft.h</file>
             <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/buzzer1.h</file>
             <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/button.h</file>
             <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/timer1.h</file>
+            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/main.c</file>
+            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/dht11.c</file>
+            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/buzzer.c</file>
+            <file>file:/Users/malterieck/MPLABXProjects/Projekt_IuE_S23.X/dht11.h</file>
         </group>
     </open-files>
 </project-private>
