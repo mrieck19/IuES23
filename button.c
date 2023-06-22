@@ -14,6 +14,7 @@ void initializeButton() {
     // Enable PCINT17 interrupt on Port B
     PCICR |= (1 << PCIE0);      // Enable Pin Change Interrupt of PCIE0 (PCINT7..0)
     PCMSK0 |= (1 << PCINT1);    // Enable PCINT17 (PD1) Interrupt in Mask Register
+    EICRA |= (1<<ISC00);        // Any logical change on INT0 generates an interrupt request
 }
 
 

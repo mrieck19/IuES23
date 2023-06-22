@@ -8,7 +8,7 @@
 #ifndef BUTTON_H
 #define	BUTTON_H
 
-#define BUTTON_PRESS (PINB & (1<<PINB1))
+#define BUTTON_PRESS (! (PINB & (1<<PINB1)))
 extern void initializeButton();
 
 
