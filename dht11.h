@@ -8,7 +8,7 @@
 #ifndef DHT11_H
 #define	DHT11_H
 
-extern void dht11_init();
+extern void initializeDHT11();
 extern void dht11_getData();
 
 #endif	/* DHT11_H */

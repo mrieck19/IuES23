@@ -15,7 +15,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-void dht11_init() {
+void initializeDHT11() {
     DDRC &= ~(1 << DHT11_PIN);      // Set DHT11 pin (PC0) as input
 }
 
