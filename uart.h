@@ -9,6 +9,7 @@
 #define	UART_H
 
 extern void initializeUART();
+extern void sendStringUART(const char* str);
 
 #endif	/* UART_H */
 
