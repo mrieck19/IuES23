@@ -77,7 +77,7 @@ int main() {
         
         //Format temperature and show it on the display
         char displayTemp[6];
-        sprintf(displayTemp, "%d.0�C", temperature);
+        sprintf(displayTemp, "%d.0°C", temperature);
         TFT_Print(&displayTemp[0], 5, 5, 4, 0x0000, 0xFFFF, 2);
         
         
