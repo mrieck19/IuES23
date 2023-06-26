@@ -23,15 +23,7 @@
 #include "spi.h"
 #include "uart.h"
 
-void resetDisplay() {
-    uint16_t x = 0;
-    
-    // Reset Background to White
-    for (x = 0; x < 23232; x++) {
-        SPISend8Bit(0xFF);
-        SPISend8Bit(0xFF);
-    } 
-}
+
 
 
 int main() {
@@ -47,7 +39,7 @@ int main() {
 
     resetDisplay();
 
-    sei();                                      // Enable Global Interrupts
+    sei();          // Enable Global Interrupts
 
     uint8_t humidity, temperature;
     uint8_t last_mqtt_window_status = 0;
@@ -83,14 +75,18 @@ int main() {
         
         resetDisplay();
         
+        //Format temperature and show it on the display
         char displayTemp[6];
         sprintf(displayTemp, "%d.0°C", temperature);
         TFT_Print(&displayTemp[0], 5, 5, 4, 0x0000, 0xFFFF, 2);
         
+        
+        //Format humidity and show it on the display
         char displayHumid[4];
         sprintf(displayHumid, "%d%%", humidity);
         TFT_Print(&displayHumid[0], 5, 40, 4, 0x0000, 0xFFFF, 2);
         
+        //wait 30 seconds
         _delay_ms(30000);
     }
 }

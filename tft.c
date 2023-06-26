@@ -118,11 +118,10 @@ const U8 Font[] =
 
 
 void SPI_init(){
-    //Set CS,MOSI,SCK as Output;
-    SPI_DDR |= (1<<CS) | (1<<MOSI) | (1<<SCK);
+    
+    SPI_DDR |= (1<<CS) | (1<<MOSI) | (1<<SCK);      //Set CS,MOSI,SCK as Output;
 
-    //enable SPI, set as master and click to fosc/4:
-    SPCR = (1<<SPE) | (1<<MSTR);
+    SPCR = (1<<SPE) | (1<<MSTR);        //enable SPI, set as master and click to fosc/4:
 }
 
 
@@ -133,21 +132,21 @@ void SendCommandSeq(const uint16_t * data, uint16_t Anzahl){
     uint16_t index;
     uint8_t SendeByte;
         for (index=0; index<Anzahl; index++){
-            PORTD |= (1<<D_C); //Kommando-Modus
-            SendeByte = (data[index] >> 8) & 0xFF; //High-Byte des Kommandos
+            PORTD |= (1<<D_C);      //Kommando-Modus
+            SendeByte = (data[index] >> 8) & 0xFF;          //High-Byte des Kommandos
             SPISend8Bit(SendeByte);
-            SendeByte = data[index] & 0xFF; //Low-Byte des Kommandos
+            SendeByte = data[index] & 0xFF;         //Low-Byte des Kommandos
             SPISend8Bit(SendeByte);
-            PORTD &= ~(1<<D_C); //Daten-Modus
+            PORTD &= ~(1<<D_C);      //Daten-Modus
         }
 }
 
 void SPISend8Bit (uint8_t data){
     
-    PORTB&= ~(1<<CS);//CS low
-    SPDR= data;//loaddataintoregister
-    while(!(SPSR& (1 << SPIF)));//wait for transmission complete
-    PORTB|= (1<<CS);//CS high
+    PORTB&= ~(1<<CS);       //CS low
+    SPDR= data;         //loaddataintoregister
+    while(!(SPSR& (1 << SPIF)));        //wait for transmission complete
+    PORTB|= (1<<CS);        //CS high
 }
 
 void Display_init(void) {
@@ -183,7 +182,17 @@ void Display_init(void) {
     SendCommandSeq(&InitData[12], 23);
 };
   
-   
+//Reset the Display to white blank
+void resetDisplay() {
+    uint16_t x = 0;
+    
+    // Reset Background to White
+    for (x = 0; x < 23232; x++) {
+        SPISend8Bit(0xFF);
+        SPISend8Bit(0xFF);
+    } 
+}
+
   
 //Funktion zum Festlegen der Display-Orientierung und eines Ausgabefensters
 void TFT_Window(U8 x1, U8 y1, U8 x2, U8 y2, U8 TFT_Orientation) 

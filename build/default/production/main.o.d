@@ -13,7 +13,13 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/fuse.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/lock.h \
  /Applications/microchip/xc8/v2.41/avr/avr/include/avr/interrupt.h \
- dht11.h timer1.h buzzer1.h button.h spi.h tft.h uart.h
+ /Applications/microchip/xc8/v2.41/avr/avr/include/util/delay.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/util/delay_basic.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/math.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/stdlib.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/stdio.h \
+ /Applications/microchip/xc8/v2.41/avr/avr/include/string.h dht11.h \
+ timer1.h buzzer1.h button.h tft.h spi.h uart.h
 
 /Applications/microchip/xc8/v2.41/avr/avr/include/avr/io.h:
 
@@ -43,6 +49,18 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
 
 /Applications/microchip/xc8/v2.41/avr/avr/include/avr/interrupt.h:
 
+/Applications/microchip/xc8/v2.41/avr/avr/include/util/delay.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/util/delay_basic.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/math.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/stdlib.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/stdio.h:
+
+/Applications/microchip/xc8/v2.41/avr/avr/include/string.h:
+
 dht11.h:
 
 timer1.h:
@@ -51,8 +69,8 @@ buzzer1.h:
 
 button.h:
 
-spi.h:
-
 tft.h:
+
+spi.h:
 
 uart.h:

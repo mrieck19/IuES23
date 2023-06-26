@@ -11,6 +11,7 @@ extern void SPISend8Bit(uint8_t data);
 
 extern void SPI_init();
 extern void Display_init(void);
+extern void resetDisplay();
 
 
 #endif
