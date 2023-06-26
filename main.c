@@ -77,7 +77,7 @@ int main() {
         
         //Format temperature and show it on the display
         char displayTemp[6];
-        sprintf(displayTemp, "%d.0°C", temperature);
+        sprintf(displayTemp, "%d.0ï¿½C", temperature);
         TFT_Print(&displayTemp[0], 5, 5, 4, 0x0000, 0xFFFF, 2);
         
         
@@ -100,7 +100,7 @@ ISR(TIMER1_OVF_vect) {
     overflow_counter++;
     
     // If 5 seconds (interrupts)
-    if (overflow_counter >= 5){
+    if (overflow_counter >= 5) {
         DISABLE_BUZZER;                         // Disable the BUZZER on Port C4
     
         TCCR1B &= ~(1 << CS12) & ~(1 << CS10);  // Clear prescaler
@@ -114,8 +114,7 @@ ISR(TIMER1_OVF_vect) {
 // Interrupt Service Routine for PCINT1 (PB1)
 ISR(PCINT0_vect) {
     // Check if the button on PD1 is pressed
-    if (BUTTON_PRESS){
-        //void TFT_Print(char* myText,U8 startX,U8 startY,U8 scale,U16 textColor,U16 backgroundColor,U8 displayOrientation); 
+    if (BUTTON_PRESS) {
         ENABLE_BUZZER;                          // Enable the Buzzer
         
         RESET_TIMER1;

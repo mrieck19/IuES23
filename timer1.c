@@ -10,12 +10,8 @@
 
 #include <avr/io.h>
 
-
-
 void initializeTimer1() {
     TIMSK1 |= (1 << TOIE1);     // Enable Timer/Counter1 Overflow Interrupt
     RESET_TIMER1;             // Set initial value of Timer1, creates interrupt every 1s
-
-
 }
 
